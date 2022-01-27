@@ -17,7 +17,7 @@ class GenerateReport
   end
 
   def export_to_csv
-    ...
+    
   end
 
 end
