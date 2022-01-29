@@ -27,22 +27,22 @@ VALUES (10, 10, 'C');
 
 SELECT * FROM classrooms;
 
-SELECT *
-FROM classrooms students
-INNER JOIN students classrooms
-ON classrooms.id = students.student_id;
+SELECT classrooms.student_id, students.first_name
+FROM classrooms
+INNER JOIN students
+ON classrooms.student_id = students.id;
 
-SELECT classrooms.student_id students.first_name
-FROM classrooms students
-LEFT JOIN students classrooms
-ON classrooms.student_id = students.first_name;
-
-SELECT *
-FROM classrooms students
-RIGHT JOIN students classrooms
-ON classrooms.id = students.student_id;
+SELECT classrooms.student_id, students.first_name
+FROM classrooms
+LEFT JOIN students
+ON classrooms.student_id = students.id;
 
 SELECT *
-FROM classrooms students
-FULL JOIN students classrooms
-ON classrooms.id = students.student_id;
+FROM classrooms
+RIGHT JOIN students 
+ON classrooms.student_id = students.id;
+
+SELECT *
+FROM classrooms 
+FULL JOIN students 
+ON classrooms.student_id = students.id;
